@@ -1,0 +1,15 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:hono": "npm:hono@4.6.15"
+    },
+    "npm": {
+      "hono@4.6.15": {
+        "integrity": "sha512-OiQwvAOAaI2JrABBH69z5rsctHDzFzIKJge0nYXgtzGJ0KftwLWcBXm1upJC23/omNRtnqM0gjRMbtXshPdqhQ==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {}
+}
