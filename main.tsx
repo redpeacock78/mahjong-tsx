@@ -49,6 +49,9 @@ app.get("/", (c: Context) => {
     <html>
       <head>
         <Style>{css`
+          body {
+            font-family: monospace;
+          }
           .container {
             margin: 0 auto;
             padding: 0;
@@ -67,11 +70,18 @@ app.get("/", (c: Context) => {
           }
           th {
             background-color: #ff525f;
+            font-weight: bold;
+            font-size: 16px;
           }
           td {
             background-color: #fffffb;
+            font-weight: normal;
+            font-size: 16px;
           }
-          .x {
+          p {
+            line-height: 0.9;
+          }
+          .pickup {
             height: 30px;
             vertical-align: middle;
             display: flex;
@@ -79,7 +89,7 @@ app.get("/", (c: Context) => {
             justify-content: center;
             background-color: rgb(126, 138, 248);
           }
-          .xx {
+          .drawn {
             height: 30px;
             vertical-align: middle;
             display: flex;
@@ -107,25 +117,25 @@ app.get("/", (c: Context) => {
                         <th>{i}</th>
                       ) : (
                         <td>
-                          <div class="x">
+                          <div class="pickup">
                             {
                               parentObject[i][
                                 Object.keys(parentObject[i])[n - 1]
                               ].pickup
                             }
                           </div>
-                          <div class="xx">
-                            {
-                              parentObject[i][
-                                Object.keys(parentObject[i])[n - 1]
-                              ].drawn.split("(")[0]
-                            }
-                            <br />
-                            {`(${
-                              parentObject[i][
-                                Object.keys(parentObject[i])[n - 1]
-                              ].drawn.split("(")[1]
-                            }`}
+                          <div class="drawn">
+                            <p>
+                              {`${
+                                parentObject[i][
+                                  Object.keys(parentObject[i])[n - 1]
+                                ].drawn.split("(")[0]
+                              }\n(${
+                                parentObject[i][
+                                  Object.keys(parentObject[i])[n - 1]
+                                ].drawn.split("(")[1]
+                              }`}
+                            </p>
                           </div>
                         </td>
                       )
@@ -152,24 +162,24 @@ app.get("/", (c: Context) => {
                         <th>{i}</th>
                       ) : (
                         <td>
-                          <div class="x">
+                          <div class="pickup">
                             {
                               childObject[i][Object.keys(childObject[i])[n - 1]]
                                 .pickup
                             }
                           </div>
-                          <div class="xx">
-                            {
-                              childObject[i][
-                                Object.keys(childObject[i])[n - 1]
-                              ].drawn.split("(")[0]
-                            }
-                            <br />
-                            {`(${
-                              childObject[i][
-                                Object.keys(childObject[i])[n - 1]
-                              ].drawn.split("(")[1]
-                            }`}
+                          <div class="drawn">
+                            <p>
+                              {`${
+                                childObject[i][
+                                  Object.keys(childObject[i])[n - 1]
+                                ].drawn.split("(")[0]
+                              }\n(${
+                                childObject[i][
+                                  Object.keys(childObject[i])[n - 1]
+                                ].drawn.split("(")[1]
+                              }`}
+                            </p>
                           </div>
                         </td>
                       )
